@@ -17,3 +17,11 @@ export type PageContextServer = PageContextBuiltIn<Page> & PageContextCustom
 export type PageContextClient = PageContextBuiltInClient<Page> & PageContextCustom
 
 type PageContext = PageContextClient | PageContextServer
+
+export type InferPageProps<Fn> = Fn extends () => Promise<{
+  pageContext: {
+    pageProps: infer P
+  }
+}>
+  ? P
+  : never

@@ -7,6 +7,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "pokeapi-typescript": "^2.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.2.0",
     "react-streaming": "^0.3.5",

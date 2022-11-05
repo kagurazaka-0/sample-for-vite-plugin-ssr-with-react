@@ -13,6 +13,9 @@ export function PageLayout({ children }: PropsWithChildren) {
           <a className="navitem" href="/about">
             About
           </a>
+          <a className="navitem" href="/pokemons">
+            Pokemons
+          </a>
         </Sidebar>
         <Content>{children}</Content>
       </Layout>
