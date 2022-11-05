@@ -1,9 +1,8 @@
-import React from 'react'
-import './PageLayout.css'
+import React, { PropsWithChildren } from "react"
 
-export { PageLayout }
+import "./PageLayout.css"
 
-function PageLayout({ children }) {
+export function PageLayout({ children }: PropsWithChildren) {
   return (
     <React.StrictMode>
       <Layout>
@@ -21,13 +20,13 @@ function PageLayout({ children }) {
   )
 }
 
-function Layout({ children }) {
+function Layout({ children }: PropsWithChildren) {
   return (
     <div
       style={{
-        display: 'flex',
+        display: "flex",
         maxWidth: 900,
-        margin: 'auto'
+        margin: "auto",
       }}
     >
       {children}
@@ -35,17 +34,17 @@ function Layout({ children }) {
   )
 }
 
-function Sidebar({ children }) {
+function Sidebar({ children }: PropsWithChildren) {
   return (
     <div
       style={{
         padding: 20,
         paddingTop: 42,
         flexShrink: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        lineHeight: '1.8em'
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        lineHeight: "1.8em",
       }}
     >
       {children}
@@ -53,14 +52,14 @@ function Sidebar({ children }) {
   )
 }
 
-function Content({ children }) {
+function Content({ children }: PropsWithChildren) {
   return (
     <div
       style={{
         padding: 20,
         paddingBottom: 50,
-        borderLeft: '2px solid #eee',
-        minHeight: '100vh'
+        borderLeft: "2px solid #eee",
+        minHeight: "100vh",
       }}
     >
       {children}

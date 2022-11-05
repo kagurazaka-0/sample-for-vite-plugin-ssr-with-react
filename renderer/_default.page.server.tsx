@@ -1,10 +1,9 @@
-import React from "react"
+import { renderToString } from "react-dom/server"
 import { renderToStream } from "react-streaming/server"
 import { dangerouslySkipEscape, escapeInject } from "vite-plugin-ssr"
+
 import { PageLayout } from "./PageLayout"
 import { PageContextServer } from "./types"
-
-import { renderToStaticNodeStream, renderToString } from "react-dom/server"
 
 // See https://vite-plugin-ssr.com/data-fetching
 export const passToClient = ["pageProps"]
@@ -15,11 +14,10 @@ export async function render(pageContext: PageContextServer) {
     <PageLayout>
       <Page {...pageProps} />
     </PageLayout>,
-    { userAgent }
+    { userAgent },
   )
 
   let head = ""
-
   const maybeHeadFn = pageContext.exports.head
   if (typeof maybeHeadFn === "function") {
     head = renderToString(maybeHeadFn({ pageProps }))
