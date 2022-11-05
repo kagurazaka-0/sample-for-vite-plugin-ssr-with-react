@@ -8,10 +8,15 @@
   "dependencies": {
     "@vitejs/plugin-react": "^2.0.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react-dom": "^18.2.0",
     "react-streaming": "^0.3.5",
     "vite": "^3.0.9",
     "vite-plugin-ssr": "0.4.44"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8"
+  }
 }
