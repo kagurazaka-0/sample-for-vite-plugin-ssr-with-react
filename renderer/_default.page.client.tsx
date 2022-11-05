@@ -1,10 +1,9 @@
 import { hydrateRoot } from "react-dom/client"
 
 import { PageLayout } from "./PageLayout"
+import { PageContextClient } from "./types"
 
-export { render }
-
-async function render(pageContext) {
+export async function render(pageContext: PageContextClient) {
   const { Page, pageProps } = pageContext
   hydrateRoot(
     document.getElementById("app")!,

@@ -19,6 +19,7 @@ const myParser = {
 }
 
 /** @type {import("prettier").Plugin}  */
+
 const myPlugin = {
   parsers: {
     typescript: myParser,

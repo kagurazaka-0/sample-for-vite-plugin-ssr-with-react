@@ -16,7 +16,8 @@
     "noEmit": true,
     "jsx": "preserve",
     "noUncheckedIndexedAccess": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "downlevelIteration": true
   },
   "include": [
     // "src",
