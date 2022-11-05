@@ -1,9 +1,15 @@
-import React from 'react'
-import { Counter } from './Counter'
+import React from "react"
+import { Counter } from "./Counter"
 
-export { Page }
+export function head() {
+  return (
+    <>
+      <title>WelcomePage</title>
+    </>
+  )
+}
 
-function Page() {
+export function Page() {
   return (
     <>
       <h1>Welcome</h1>
