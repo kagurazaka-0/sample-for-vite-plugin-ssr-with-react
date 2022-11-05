@@ -20,11 +20,11 @@ export async function render(pageContext: PageContextServer) {
   let head = ""
   const maybeHeadFn = pageContext.exports.head
   if (typeof maybeHeadFn === "function") {
-    head = renderToString(maybeHeadFn({ pageProps }))
+    head = renderToString(maybeHeadFn(pageProps))
   }
 
   return escapeInject`<!DOCTYPE html>
-    <html>
+    <html lang="ja">
       <head>
       ${dangerouslySkipEscape(head)}
       </head>

@@ -18,7 +18,8 @@ export type PageContextClient = PageContextBuiltInClient<Page> & PageContextCust
 
 type PageContext = PageContextClient | PageContextServer
 
-export type InferPageProps<Fn> = Fn extends () => Promise<{
+/** onBeforeRenderの返り値からpagePropsを推論する */
+export type InferPageProps<Fn> = Fn extends (..._: any[]) => Promise<{
   pageContext: {
     pageProps: infer P
   }
