@@ -18,11 +18,10 @@ export async function render(pageContext: PageContextServer) {
     { userAgent }
   )
 
-  let head: string | ReturnType<typeof renderToStaticNodeStream> = ""
+  let head = ""
 
   const maybeHeadFn = pageContext.exports.head
   if (typeof maybeHeadFn === "function") {
-    // head = renderToStaticNodeStream(maybeHeadFn({ pageProps }))
     head = renderToString(maybeHeadFn({ pageProps }))
   }
 
@@ -32,7 +31,7 @@ export async function render(pageContext: PageContextServer) {
       ${dangerouslySkipEscape(head)}
       </head>
       <body>
-        <div id="page-view">${stream}</div>
+        <div id="app">${stream}</div>
       </body>
     </html>`
 }
